@@ -1,6 +1,8 @@
+build/
 target/
 /bin/
 /test-output/
+.factorypath
 .project
 .classpath
 .settings
