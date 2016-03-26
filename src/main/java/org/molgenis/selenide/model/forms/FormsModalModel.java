@@ -67,7 +67,8 @@ public class FormsModalModel extends AbstractModel
 	public DataModel clickOnCreateButton()
 	{
 		LOG.info("click on create button...");
-		Selenide.sleep(1000); // waiting for validation to complete
+		Selenide.sleep(5000); // waiting for validation to complete
+		$(By.name("create")).waitUntil(visible, 1000);
 		$(By.name("create")).click();
 		return new DataModel();
 	}

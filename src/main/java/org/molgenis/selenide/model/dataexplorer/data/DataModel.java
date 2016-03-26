@@ -1,19 +1,18 @@
 package org.molgenis.selenide.model.dataexplorer.data;
 
-import java.util.List;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+
 import java.util.concurrent.TimeUnit;
 
 import org.molgenis.selenide.model.AbstractModel;
-import org.molgenis.selenide.model.component.SpinnerModel;
 import org.molgenis.selenide.model.forms.FormsModalModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Condition.*;
 
 public class DataModel extends AbstractModel
 {
@@ -37,6 +36,7 @@ public class DataModel extends AbstractModel
 	{
 		LOG.info("click on add row button for entity TypeTest...");
 		$("#data-table-container button[title='Add row']").click();
+		Selenide.sleep(5000); //wait for model to load
 		return new FormsModalModel().waitForModal();
 	}
 
